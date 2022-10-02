@@ -28,7 +28,7 @@ function DepList({ deputados }) {
 
 const styles = StyleSheet.create({
     testeH: {
-        marginTop: 100,
+        marginTop: 50,
         marginHorizontal: 'auto',
         width: '90%',
         height: 80,

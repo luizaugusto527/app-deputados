@@ -1,9 +1,9 @@
 
 
 const getDeputados = async () => {
-    const urlCoin = 'https://dadosabertos.camara.leg.br/api/v2/deputados?ordem=ASC&ordenarPor=nome'
+    const urlDep = 'https://dadosabertos.camara.leg.br/api/v2/deputados?ordem=ASC&ordenarPor=nome'
     try {
-        const response = await fetch(urlCoin)
+        const response = await fetch(urlDep)
         const data = await response.json()
         return data.dados
     }
@@ -15,11 +15,10 @@ const getDeputados = async () => {
 }
 
 export const getDeputadosById = async (id) => {
-    const urlCoin = `https://dadosabertos.camara.leg.br/api/v2/deputados/${id}`
+    const urlDep = `https://dadosabertos.camara.leg.br/api/v2/deputados/${id}`
     try {
-        const response = await fetch(urlCoin)
+        const response = await fetch(urlDep)
         const data = await response.json()
-        console.log(data.dados);
         return data.dados
     }
     catch (error) {
@@ -28,5 +27,19 @@ export const getDeputadosById = async (id) => {
 
     }
 }
+export const getDespesas = async (id) => {
+    const urlDep = `https://dadosabertos.camara.leg.br/api/v2/deputados/${id}/despesas?ordem=ASC&ordenarPor=mes`
+    try {
+        const response = await fetch(urlDep)
+        const data = await response.json()
+        return data.dados
+    }
+    catch (error) {
+        console.log(error);
+
+
+    }
+}
+
 
 export default getDeputados
